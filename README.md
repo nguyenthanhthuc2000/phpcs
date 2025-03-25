@@ -1,17 +1,13 @@
 # Hướng dẫn sử dụng PHP_CodeSniffer (phpcs)
 
 ## Cài đặt
-1. Cài đặt PHP_CodeSniffer thông qua Composer:
+1. Cài đặt PHP_CodeSniffer và PSR-12 Coding Standard thông qua Composer:
 ```bash
 composer require --dev squizlabs/php_codesniffer
-```
-
-2. Cài đặt PSR-12 Coding Standard:
-```bash
 composer require --dev slevomat/coding-standard
 ```
 
-3. Cài đặt sẳn, tạo folder tools cùng cấp với thư mục root:
+2. Cài đặt sẳn, tạo folder tools cùng cấp với thư mục root:
 ```bash
 git clone https://github.com/nguyenthanhthuc2000/phpcs.git
 cd your folder -> composer install
@@ -22,34 +18,34 @@ cd your folder -> composer install
 ### 1. Kiểm tra code (phpcs)
 ```bash
 # Kiểm tra toàn bộ code trong thư mục src
-./vendor/bin/phpcs src
+./vendor/bin/phpcs ../src
 
 # Kiểm tra một file cụ thể
-./vendor/bin/phpcs src/routes/web.php
+./vendor/bin/phpcs ../src/routes/web.php
 
 # Kiểm tra với giới hạn bộ nhớ cao hơn
-./vendor/bin/phpcs -d memory_limit=512M src
+./vendor/bin/phpcs -d memory_limit=512M ../src
 
 # Kiểm tra và hiển thị source code
-./vendor/bin/phpcs -s src
+./vendor/bin/phpcs -s ../src
 
 # Kiểm tra và hiển thị mã lỗi
-./vendor/bin/phpcs -n src
+./vendor/bin/phpcs -n ../src
 
 # Kiểm tra với màu sắc
-./vendor/bin/phpcs --colors src
+./vendor/bin/phpcs --colors ../src
 ```
 
 ### 2. Tự động sửa code (phpcbf)
 ```bash
 # Sửa toàn bộ code trong thư mục src
-./vendor/bin/phpcbf src
+./vendor/bin/phpcbf ../src
 
 # Sửa một file cụ thể
-./vendor/bin/phpcbf src/routes/web.php
+./vendor/bin/phpcbf ../src/routes/web.php
 
 # Sửa với giới hạn bộ nhớ cao hơn
-./vendor/bin/phpcbf -d memory_limit=512M src
+./vendor/bin/phpcbf -d memory_limit=512M ../src
 ```
 
 ### 3. Các tùy chọn phổ biến
@@ -79,10 +75,10 @@ cd your folder -> composer install
 ### 4. Ví dụ lệnh đầy đủ
 ```bash
 # Kiểm tra với đầy đủ tùy chọn
-./vendor/bin/phpcs -psn --colors --standard=PSR12 --ignore=*/vendor/*,*/node_modules/* src
+./vendor/bin/phpcs -psn --colors --standard=PSR12 --ignore=*/vendor/*,*/node_modules/* ../src
 
 # Sửa code với đầy đủ tùy chọn
-./vendor/bin/phpcbf --standard=PSR12 --ignore=*/vendor/*,*/node_modules/* src
+./vendor/bin/phpcbf --standard=PSR12 --ignore=*/vendor/*,*/node_modules/* ../src
 ```
 
 ## Cấu hình trong phpcs.xml
@@ -161,15 +157,3 @@ use App\Models\User, App\Models\Post;
 use App\Models\User;
 use App\Models\Post;
 ```
-
-## Tích hợp với IDE
-
-### PHPStorm
-1. Settings > Editor > Code Style > PHP
-2. Set PSR-12 as coding standard
-3. Enable "Show intention bulb"
-
-### VS Code
-1. Cài đặt extension PHP Sniffer
-2. Cấu hình PHP_CodeSniffer path
-3. Enable format on save 
