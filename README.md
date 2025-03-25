@@ -13,7 +13,8 @@ composer require --dev slevomat/coding-standard
 
 3. Cài đặt sẳn, tạo folder tools cùng cấp với thư mục root:
 ```bash
-composer require --dev slevomat/coding-standard
+git clone https://github.com/nguyenthanhthuc2000/phpcs.git
+cd your folder -> composer install
 ```
 
 ## Cách sử dụng
