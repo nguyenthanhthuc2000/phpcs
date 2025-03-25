@@ -7,7 +7,7 @@ composer require --dev squizlabs/php_codesniffer
 composer require --dev slevomat/coding-standard
 ```
 
-2. Cài đặt sẳn, tạo folder tools cùng cấp với thư mục root:
+2. Cài đặt sẳn, vào thư mục cùng cấp với thư mục root chứa source code:
 ```bash
 git clone https://github.com/nguyenthanhthuc2000/phpcs.git
 cd your folder -> composer install
